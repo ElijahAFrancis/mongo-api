@@ -15,7 +15,7 @@ const userController = {
 
   async getSingleUser(req, res) {
     try {
-      const user = await User.findByID(req.params.userId)
+      const user = await User.findById(req.params.userId)
         .select('-__v');
 
       if (!user) {
